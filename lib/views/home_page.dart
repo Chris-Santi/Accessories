@@ -111,7 +111,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List products = [];
-  int _currentIndex = 0;
+
   List<dynamic> _wishlist = [];
 
   @override
@@ -667,57 +667,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
-
-      // Bottom Nav
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.grey,
-        selectedLabelStyle: TextStyle(color: Colors.orange),
-        unselectedLabelStyle: TextStyle(color: Colors.grey),
-        onTap: (index) {
-          setState(() => _currentIndex = index);
-          if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder:
-                    (_) => WishlistPage(
-                      wishlist: _wishlist.cast<Map<String, dynamic>>(),
-                    ),
-              ),
-            );
-          } else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const CartPage()),
-            );
-          } else if (index == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => ProfilePage()),
-            );
-          }
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.grey),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite, color: Colors.grey),
-            label: "Wishlist",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart, color: Colors.grey),
-            label: "Cart",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.grey),
-            label: "Profile",
-          ),
-        ],
       ),
     );
   }

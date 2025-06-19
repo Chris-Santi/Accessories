@@ -1,4 +1,5 @@
 // import 'dart:convert';
+import 'package:accessories/views/buttombar.dart';
 import 'package:accessories/views/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -153,7 +154,9 @@ class _LoginPageState extends State<LoginPage> {
                       if (_formKey.currentState!.validate()) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
+                          MaterialPageRoute(
+                            builder: (context) => ButtomBarPage(),
+                          ),
                         );
                       }
                     },
