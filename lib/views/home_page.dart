@@ -181,12 +181,7 @@ class _HomePageState extends State<HomePage> {
         leading: PopupMenuButton<String>(
           icon: Icon(Icons.menu),
           onSelected: (value) {
-            if (value == 'Profile') {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProfilePage()),
-              );
-            } else if (value == 'About') {
+            if (value == 'About') {
               showAboutDialog(
                 context: context,
                 applicationName: 'Accessories App',
@@ -222,7 +217,7 @@ class _HomePageState extends State<HomePage> {
           },
           itemBuilder:
               (context) => [
-                PopupMenuItem(value: 'Profile', child: Text('Profile')),
+                // PopupMenuItem(value: 'Profile', child: Text('Profile')),
                 PopupMenuItem(value: 'About', child: Text('About')),
                 PopupMenuItem(value: 'Contact Us', child: Text('Contact Us')),
                 PopupMenuItem(value: 'Logout', child: Text('Logout')),
@@ -239,7 +234,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.search),
           ),
         ],
-      ), // Close AppBar here
+      ),
 
       body: SingleChildScrollView(
         child: Padding(
